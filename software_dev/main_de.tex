@@ -55,11 +55,11 @@
 %\usepackage[defaultsans]{droidsans}
 %\usepackage[default]{comfortaa}
 %\usepackage{cmbright}
-%\usepackage[default]{raleway}
-%\usepackage{fetamont}
-%\usepackage[default]{gillius}
-%\usepackage[light,math]{iwona}
-\usepackage[thin]{roboto} 
+\usepackage[default]{raleway}
+% \usepackage{fetamont}
+% \usepackage[default]{gillius}
+% \usepackage[light,math]{iwona}
+% \usepackage[thin]{roboto} 
 
 % set font default
 \renewcommand*\familydefault{\sfdefault} 	
@@ -68,6 +68,7 @@
 % more font size definitions
 \usepackage{moresize}		
 
+\usepackage{fontawesome}
 
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT  DEFINITIONS
@@ -81,7 +82,7 @@
 \usepackage[a4paper]{geometry}		
 
 % for example, change the margins to 2 inches all round
-\geometry{top=1.75cm, bottom=-.6cm, left=1.5cm, right=1.5cm} 	
+\geometry{top=1.75cm, bottom=-.6cm, left=1cm, right=1cm} 	
 
 %use customized header
 \usepackage{fancyhdr}				
@@ -93,12 +94,16 @@
 
 %customize entries left, center and right
 \lhead{}
-\chead{ \small{Jan Küster  $\cdot$ Consultant and Software Engineer $\cdot$  Bremen, Germany  $\cdot$  \textcolor{sectcol}{\textbf{info@jankuester.com}}  $\cdot$ +49 176 313 877 34}}
+\chead{ \small{Nicholas A. Del Grosso  $\cdot$  Munich, Germany  $\cdot$  \textcolor{sectcol}{\textbf{delgrosso.nick@gmail.com}}  $\cdot$ +49 170 8253289 $\cdot$ \faicon{github} nickdelgrosso}
+}
 \rhead{}
 
 
 %indentation is zero
 \setlength{\parindent}{0mm}
+
+%Hyphenation penalty
+\hyphenpenalty
 
 %----------------------------------------------------------------------------------------
 %	TABLE /ARRAY/LIST DEFINITIONS
@@ -142,10 +147,10 @@
 \usepackage{color}
 
 %accent color
-\definecolor{bgcol}{RGB}{13,92,127}
+\definecolor{bgcol}{RGB}{13,82,107}
 
 %dark background color
-\definecolor{sectcol}{RGB}{204,110,0}
+\definecolor{sectcol}{RGB}{170,80,0}
 
 %light background / accent color
 \definecolor{softcol}{RGB}{225,225,225}
@@ -226,6 +231,8 @@
 	\begin{tabular*}{1\linewidth}{p{0.18\linewidth} p{0.76\linewidth}}
 		\larrow{bgcol}\normalsize{\textbf{\textcolor{sectcol}{#1}}}&#2\\
 	\end{tabular*}
+	
+    \vspace{3pt}
 }
 
 %----------------------------------------------------------------------------------------
@@ -242,7 +249,7 @@
 %
 \newcommand{\cvevent}[5] {
 \begin{flushleft}
-\textcolor{sectcol}{#1 - #3}\\
+\textcolor{sectcol}{#1,  #3}\\
 \textbf{#2}\\[-7pt]
 \textcolor{softcol}{\hrule}
 \vspace{\spread}
@@ -301,23 +308,23 @@
 %	TITLE HEADLINE
 %----------------------------------------------------------------------------------------
 
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.25\linewidth][c]{\HUGE{\textcolor{white}{\textsc{Jan}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\textsc{Küster}} } }}
+\hspace{-0.15\linewidth}\colorbox{bgcol}{\makebox[1.15\linewidth][c]{\textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \Huge{\textcolor{white}{\textsc{Nicholas}} } \Huge{\textcolor{white}{\textsc{Del Grosso}} } }}
 
 %----------------------------------------------------------------------------------------
 %	HEADER IMAGE
 %----------------------------------------------------------------------------------------
-\hspace{-0.25\linewidth}\includegraphics[width=1.2725\linewidth]{myfoto.jpg} %use full size
+\hspace{-0.25\linewidth}\includegraphics[width=1.2725\linewidth, height=4.4cm]{../my_foto.jpg} %use full size
 
 %---------------------------------------------------------------------------------------
 %	QR CODE (optional)
 %----------------------------------------------------------------------------------------
-\vspace{-100pt}
-\hspace{0.59\linewidth}
-\includegraphics[width=88pt]{qrcode}
-\normalsize
+% \vspace{-100pt}
+% \hspace{0.59\linewidth}
+% \includegraphics[width=88pt]{qrcode}
+% \normalsize
 
 
-\vspace{20pt}
+\vspace{5pt}
 
 \end{minipage} 
 \hfill
@@ -327,11 +334,12 @@
 %----------------------------------------------------------------------------------------
 \vspace{\spread}
 
-\cvsection{Summary}\\
-I am a digital media graduate (M.Sc.) with project experience in educational research as well as in the private sector. During my studies I focused on e-assessment software and moved over to b2b software for IBM Notes Domino.
+\cvsection{Zusammenfassung}\\
+Ich bin promovierter Neurowissenschaftler mit 10 Jahren Projekterfahrung in wissenschaftlicher Softwareentwicklung und Datenanalyse in Python und R.
 
-Currently I develop and evaluate the next generation learning management system with Meteor based on an extensive nursing curriculum for healthcare education.  I also love fitness, martial arts, videogames, news and Sci-Fi series.\\[-2pt]
-\textcolor{softcol}{\hrule}
+\vspace{5pt}
+
+Ich entwickle Ausbildungsprogramme für Wissenschaftler in Datenanalyse und Software-Engineering und unterrichte Methoden aus den Bereichen Software Craftsmanship und Lean Management.  Ich berate auch über wissenschaftliche Open-Source-Software.  Seit ich vor 9 Jahren mit dem Unterrichten begann, habe ich mehr als 500 Wissenschaftlern und Ingenieuren geholfen, ihre Programmierkenntnisse zu verbessern.\\[-2pt]
 
 \end{minipage}
 
@@ -342,18 +350,35 @@ Currently I develop and evaluate the next generation learning management system 
 %---------------------------------------------------------------------------------------
 %	META SECTION
 %----------------------------------------------------------------------------------------
-\metasection{Status:}{Fullstack JS Engineer, M.Sc. Digital Media, Consultant}
-\metasection{Fields:}{Project Management, Software Development, Consulting} 
+
+\cvsection{Erfahrungen}
+
+\metasection{Data:}{Python, R, Pandas, Numpy, Xarray, Scikit-Learn, PyMC3, Flask, Snakemake, Seaborn, Altair, DVC, HDF5, NetCDF, Jupyter Lab, Papermill, Matlab, SPSS}
+
+\metasection{Tech:}{Git, GitHub, Bash, Linux, Docker, Travis CI, OpenGL, Javascript, Hugo, Netlify, Bootstrap, Trello, PyCharm, VSCode, Blender3D, Adobe Suite}
+
+
+\metasection{Lehren:}{Python Programming, Statistics in R, Software Engineering, Reseach Project Management, Public Speaking}
+
+\metasection{Sprach:}{Englisch (Muttersprache), Deutsch (B1)}
+
+\metasection{Spass:}{Rätsel, Lesen, Reisen, Design, Mob Programmieren, Hackathons, Science Slams}
+
+
 \end{minipage}
 \hfill
 \begin{minipage}[t]{0.485\textwidth}
 
-\vspace{5pt}
+\vspace{\spread}
 
-\metasection{Tech:}{Meteor, Javascript, Bootstrap, Mongodb, Git, Webstorm, Sourcetree, Terminal}
-\metasection{Loves:}{Global Game Jam, Sci-Fi series, Stackoverflow, Fitness and Martial Arts}
+\cvsection{Aktueller Status}
+
+\cvevent{July 2019 - Derzeitig}{Freiberuflicher Trainer für Datenwissenschaft und Programmierung}{München, Deutschland }{Unterrichtet praktische Workshops für wissenschaftliche Forscher und Ingenieure.}{Über 600 Stunden Lehrerfahrung, für Klassengrößen von 8-150 Studenten.}
+
+\cvevent{May 2020 - Derzeitig}{Freiberuflicher Remote-Software-Berater}{Remote, München, Deutschland }{Verbessere wissenschaftlicher Open-Source-Software für Kunden im In- und Ausland.}{Profilieren von Algorithmen für Geschwindigkeit, Speichernutzung und IO.}
+%
+
 \end{minipage}
-
 
 \begin{minipage}[t]{0.485\textwidth}
 
@@ -363,28 +388,25 @@ Currently I develop and evaluate the next generation learning management system 
 %	EDUCATION SECTION
 %--------------------------------------------------------------------------------------
 
-\cvsection{Education}
+\cvsection{Bildung}
 
-\cvevent{2015 / 07}{Graduated as M.Sc. Digital Media}{University of Bremen}{Master Thesis: Semi Automated Scoring in Technology Based Assessment}{Developed and evaluated an algorithm for semi automated scoring of spreadsheet data}
-
-%\textcolor{softcol}{\hrule}
-
-%
-\cvevent{2012 - 2013}{Master Project - PrIMA}{University of Bremen}{Co-Invented a touch table application for medical support, co-developed software (Java) }{Formed a scrum team, mainted project dev server (Debian), surveyed target audience}
+\cvevent{2012-2018}{Ph.D - Systeme Neurowissenschaft}{LMU München}{Entwickelte und baute ein Open-Source VR-System für die Tierverhaltensforschung in Python.}{Unterrichtete Universitätskurse in Python-Programmierung und betreute fünf Studenten in Ingenieur-, Forschungs- und Programmierprojekten mit einer Dauer von 3-12 Monaten.}
 
 %\textcolor{softcol}{\hrule}
 
 %
-\cvevent{2012 - 2015}{Master Studies Digital Media}{University of Bremen}{Inter-cultural classes in English, covering special topics in computer science and design}{Professionalized in research methods, software development and e-assessment}
-
-%
-\cvevent{2009 - 2010}{Semester Abroad}{University of Melbourne}{Mastered six months of study and trans-cultural experience in Melbourne, Australia}{Finished machine programming, information visualization, professional essay writing}
-
-%
-\cvevent{2007 - 2012}{Bachelor Studies Digital Media}{University of Bremen}{Fundamentals in Computer Science}{Bachelor thesis focused on experimental redesign of the keyboard to support functional illiterates.}
+\cvevent{2010-2012}{M.Sc. - Neurowissenschaft}{Üniversität Tübingen}{Analysierte spektrale und zeitserielle Hirnbildgebungsdaten zur Beurteilung der klinischen Effekte von Physiotherapie und Brain-Machine-Interface-Therapie bei Schlaganfallpatienten}{Organisierte eine studentische Vortragsreihe zur Datenanalyse und implementierte ein Wiki für das Forschungsinstitut.}
 
 %\textcolor{softcol}{\hrule}
 
+%
+\cvevent{2006-2010}{B.Sc. - Psychologie}{Wittenberg University, Ohio, USA}{Bau eines NI-DAQ EEG-Systems, programmierte Online-Analyse in Matlab und LabView.}{Lehrassistent für Neurophysiologie (Neurochirurgie bei Nagetieren und Elektrophysiologie).}
+
+%
+% \cvevent{2008 - 2009}{Summer Lab Rotations}{Duke University, North Carolina, USA}{Routine electrical engineering (impedence measurements, cable repair) and data analysis (Matlab).}{Animal training for cognitive experiments}
+
+
+%\textcolor{softcol}{\hrule}
 
 \end{minipage}
 \hfill
@@ -395,23 +417,13 @@ Currently I develop and evaluate the next generation learning management system 
 %---------------------------------------------------------------------------------------
 %	EXPERIENCE
 %----------------------------------------------------------------------------------------
-\cvsection{Experience}
+\cvsection{Einschlägige Erfahrung}
 
+\cvevent{Nov. 2019 - March 2020}{Scientific Employee / Workshop Planner}{G-Node, LMU München}{Für die NFDI-Initiative zur Ausbildung in der Computerinfrastruktur entwarf ich einen Kurslehrplan "Forschungsdatenmanagement".}{I Praktische Übungen zu Git und wissenschaftlicher Transparenz vorbereitet.}
 %
-\cvevent{2016 / 09}{Fullstack Javascript Engineer}{University of Bremen}{Invent a realtime classroom management using Meteor and React}{Design software architecture and leading development}
+\cvevent{Nov. 2018 - July 2019}{Coach für Softwaretechnik}{Max Planck Institute für Biochemie, München}{Ich schulte und betreute Forscher in der Python-Datenanalyse an den Standorten München und Kopenhagen der Abteilung.}{Ich integrierte Lean-Managementmethoden in Massenspektrometrie-Workflows durch eine kundenspezifische Anwendung zur Auftragsplanung.}
 
-%
-\cvevent{2014 - 2016}{IT Consultant for IBM XPages and Notes Domino}{We4IT GmbH Bremen}{Realize projects in XPages and We4IT Aveedo, monitor project status, conduct reports}{Integrated Camunda BPMN engine and BPMN.IO modeler in We4IT Aveedo}
-
-%
-\cvevent{2012 - 2014}{Scientific Employee / Software Development}{University of Bremen}{Invented a flexible assessment framework, targeting industrial trainees}{Supervised software development lifecycle, Recruited team members}
-
-%
-\cvevent{2011 / 11}{Project Management Simulation Training}{Getoq Consulting}{Performed a two-day project simulation from management perspective}{Topics included customer contracts, change management, controlling, operational tasks}
-
-%
-\cvevent{2010 - 2011}{Student Assistant / Programmer}{otulea.uni-bremen.de}{Realized an online diagnosis platform for workforce literacy development (Flex)}{Modeled software design, implemented various prototypes, conducted usability tests}
-
+\cvevent{2014-Present}{Freiwilliger Organisator und Ausbilder von Meetups}{PyData, LMU München, & ReDI Schule}{Organisierte über 70 öffentliche Anleitungsveranstaltungen in Technologieunternehmen für die lokale Datenwissenschaftsgemeinschaft.}{Ich coachte Gastredner für Veranstaltungen (50-200 Teilnehmer), rekrutierte Führungsteams für etablierte Gruppen und unterrichtete Online-Kurse.}
 
 \end{minipage}
 
@@ -421,7 +433,7 @@ Currently I develop and evaluate the next generation learning management system 
 
 \null
 \vspace*{\fill}
-\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\mystrut  \textcolor{white}{www.jankuester.com} $\cdot$ \textcolor{white}{github.com/jankapunkt}}}
+\hspace{-0.25\linewidth}\colorbox{white}{\makebox[1.5\linewidth][c]{\mystrut  \textcolor{white}{https://www.linkedin.com/in/nick-del-grosso/} $\cdot$ \textcolor{white}{https://www.github.com/nickdelgrosso}}}
 
 
 
